@@ -3,12 +3,12 @@ import { sleep, check } from 'k6';
 
 // konfigurasi load test
 export const options = {
-  vus: 10, // jumlah virtual user
+  vus: 50, // jumlah virtual user
   duration: '10s', // waktu test 10 detik
 };
 
 export default function () {
-  const res = http.get('https://test.k6.io');
+  const res = http.get('https://dev.salfok.com/business/login');
 
   // validasi response
   check(res, {
